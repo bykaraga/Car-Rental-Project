@@ -46,6 +46,12 @@ Proje, **tamamlanmış** sayılabilmesi için aşağıdaki koşulları eksiksiz 
    (Sadece temel OOP konuları: class, object, method, constructor)  
 
 ---
+| #   | Sınıf Adı     | Görevi                              | İçermesi Gerekenler                                                                                                                                                                                                                                                                                         |
+| --- | ------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1️⃣ | **Car**       | Bir aracın temel bilgilerini tutar. | <ul><li>`String brand` → aracın markası</li><li>`String model` → aracın modeli</li><li>`double dailyPrice` → günlük kiralama ücreti</li><li>**Constructor:** `Car(String brand, String model, double dailyPrice)`</li><li>**Metot:** `void printInfo()` → aracın bilgilerini ekrana yazdırır.</li></ul>     |
+| 2️⃣ | **Rental**    | Bir kiralama işlemini temsil eder.  | <ul><li>`Car car` → kiralanan araç</li><li>`int days` → kiralama süresi (gün)</li><li>**Constructor:** `Rental(Car car, int days)`</li><li>**Metot:** `double calculateTotal()` → toplam ücret (günlük ücret × gün sayısı)</li><li>**Metot:** `void printInfo()` → kiralama bilgilerini yazdırır.</li></ul> |
+| 3️⃣ | **CarDriver** | Programın ana (main) sınıfıdır.     | <ul><li>`main(String[] args)` metodu bulunmalı</li><li>En az **3 farklı Car** nesnesi oluşturmalı</li><li>Her biri için **Rental** nesnesi tanımlamalı</li><li>`printInfo()` metotlarıyla sonuçları ekrana yazdırmalı</li></ul>                                                                             |
+
 
 ## 💻 Örnek Çalışma Akışı
 
