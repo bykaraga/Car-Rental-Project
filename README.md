@@ -1,81 +1,142 @@
-# 🚗 Araç Kiralama Sistemi (Car Rental Project)
-
-> **Not:** Bu README dosyasının yalnızca bu kısmı ChatGPT tarafından hazırlanmıştır.  
-> Projenin kodları, yorumları ve ek dokümantasyonlarında yapay zekâ kullanılması **yasaktır**.  
+Aşağıda, `Car-Rental-Project` için “codify” tarzında, yani yapısal, okunabilir ve standart bir README dosyası şablonu oluşturdum. Mevcut README içeriğini referans alarak, eksiksiz ve temiz bir versiyon hazırladım; sen istersen ben bunu doğrudan GitHub’a eklemene uygun hâle getirebilirim.
 
 ---
 
-## 🎯 Projenin Amacı
+```md
+# Car Rental Project / Araç Kiralama Sistemi
 
-Bu projenin amacı, **Java diliyle nesne yönelimli programlama (OOP)** ilkelerini kullanarak  
-temel bir **araç kiralama sisteminin işleyişini modellemek** ve öğrencinin aşağıdaki konularda uygulamalı deneyim kazanmasını sağlamaktır:
-
-- Sınıf (Class) ve Nesne (Object) kavramlarını doğru kullanmak,  
-- Constructor (Yapıcı Metot) tanımlamak ve nesne başlatmak,  
-- Metotlar aracılığıyla hesaplama işlemleri yapmak,  
-- Erişim belirleyicilerini (`public`, `private`) doğru şekilde uygulamak,  
-- Kodun çıktısını ekrana düzgün bir formatta yazdırmak.  
+**Java** ile yazılmış bu proje, nesne yönelimli programlama (OOP) prensiplerini kullanarak temel bir araç kiralama sistemini modellemeyi amaçlar.
 
 ---
 
-## 🧾 Projenin Tamamlanma Koşulları
+## 🚀 İçerik
 
-Proje, **tamamlanmış** sayılabilmesi için aşağıdaki koşulları eksiksiz karşılamalıdır:
-
-1. ✅ **Car** adlı bir sınıf oluşturulmalı ve en az şu değişkenleri içermelidir:  
-   - `brand` (String): aracın markası  
-   - `model` (String): aracın modeli  
-   - `dailyPrice` (double): günlük kiralama ücreti  
-
-2. ✅ **Rental** adlı bir sınıf oluşturulmalı ve şu özellikleri içermelidir:  
-   - `Car` türünde bir değişken (kiralanan araç bilgisi)  
-   - `days` (int): kiralama süresi  
-   - `calculateTotal()` metodu: toplam ücreti hesaplar (`dailyPrice * days`)  
-   - `printInfo()` metodu: araç ve kiralama bilgilerini ekrana yazdırır  
-
-3. ✅ **CarDriver (main sınıfı)** oluşturulmalı ve:  
-   - En az **3 farklı araç** tanımlanmalı,  
-   - Her biri için **Rental** nesnesi oluşturulmalı,  
-   - Bilgiler ekrana açık ve okunabilir biçimde yazdırılmalıdır.  
-
-4. ✅ Kodda **nesne yönelimli prensipler** (class, constructor, method) doğru kullanılmalıdır.  
-
-5. ✅ Çıktılar **Türkçe** ve düzenli biçimde gösterilmelidir.  
-
-6. ✅ Projede **ArrayList, HashMap** veya ileri seviye yapılar kullanılmamalıdır.  
-   (Sadece temel OOP konuları: class, object, method, constructor)  
+- [Amaç](#amaç)  
+- [Özellikler](#özellikler)  
+- [Projenin Tamamlanma Ölçütleri](#projenin-tamamlanma-ölçütleri)  
+- [Sınıf Mimarı](#sınıf-mimarı)  
+- [Örnek Çıkış](#örnek-çıkış)  
+- [Kurulum & Çalıştırma](#kurulum--çalıştırma)  
+- [Lisans](#lisans)  
+- [Uyarı](#uyarı)  
 
 ---
-| #   | Sınıf Adı     | Görevi                              | İçermesi Gerekenler                                                                                                                                                                                                                                                                                         |
-| --- | ------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1️⃣ | **Car**       | Bir aracın temel bilgilerini tutar. | <ul><li>`String brand` → aracın markası</li><li>`String model` → aracın modeli</li><li>`double dailyPrice` → günlük kiralama ücreti</li><li>**Constructor:** `Car(String brand, String model, double dailyPrice)`</li><li>**Metot:** `void printInfo()` → aracın bilgilerini ekrana yazdırır.</li></ul>     |
-| 2️⃣ | **Rental**    | Bir kiralama işlemini temsil eder.  | <ul><li>`Car car` → kiralanan araç</li><li>`int days` → kiralama süresi (gün)</li><li>**Constructor:** `Rental(Car car, int days)`</li><li>**Metot:** `double calculateTotal()` → toplam ücret (günlük ücret × gün sayısı)</li><li>**Metot:** `void printInfo()` → kiralama bilgilerini yazdırır.</li></ul> |
-| 3️⃣ | **CarDriver** | Programın ana (main) sınıfıdır.     | <ul><li>`main(String[] args)` metodu bulunmalı</li><li>En az **3 farklı Car** nesnesi oluşturmalı</li><li>Her biri için **Rental** nesnesi tanımlamalı</li><li>`printInfo()` metotlarıyla sonuçları ekrana yazdırmalı</li></ul>                                                                             |
 
+## Amaç
 
-## 💻 Örnek Çalışma Akışı
+Bu projenin amacı:
 
----------------------
+- Java dilinde **nesne yönelimli programlamayı (OOP)** uygulamalı hale getirmek,  
+- Sınıf, nesne, constructor, metot, erişim belirleyicileri gibi temel kavramları pekiştirmek,  
+- Basit bir araç kiralama sisteminin işleyişini modellemek ve çıktıyı okunabilir formatta vermek.
+
+---
+
+## Özellikler
+
+Projede olması beklenen temel özellikler:
+
+- `Car` sınıfı: araç markası, modeli ve günlük kira bedeli bilgilerini tutar.  
+- `Rental` sınıfı: kiralama işlemini temsil eder; kaç gün kiralandığı ve toplam bedel hesaplama mantığı içerir.  
+- `CarDriver` (main) sınıfı: birkaç araç tanımlar, kiralama işlemlerini oluşturur ve bilgileri ekrana yazdırır.  
+- Kod, OOP prensiplerine uygun, okunabilir ve anlaşılabilir olmalıdır.  
+- Gelişmiş koleksiyon yapıları (ArrayList, HashMap vb.) **kullanılmamalıdır**.
+
+---
+
+## Projenin Tamamlanma Ölçütleri
+
+Projenin “tamamlanmış” sayılabilmesi için aşağıdaki koşullar yerine getirilmelidir:
+
+1. `Car` sınıfı en az aşağıdaki değişkenlere sahip olmalı:  
+   - `String brand`  
+   - `String model`  
+   - `double dailyPrice`  
+
+2. `Rental` sınıfı şu özelliklere sahip olmalı:  
+   - `Car car`  
+   - `int days`  
+   - `double calculateTotal()` metodu → günlük kira × gün sayısı  
+   - `void printInfo()` metodu → kiralama bilgilerini ekrana yazdırma  
+
+3. `CarDriver` sınıfında:  
+   - `main(String[] args)` metodu olmalı  
+   - En az **3 farklı** `Car` nesnesi tanımlanmalı  
+   - Her biri için `Rental` nesnesi oluşturulmalı  
+   - `printInfo()` ile sonuçlar okunabilir biçimde gösterilmeli  
+
+4. Çıktılar Türkçe olmalı ve düzgün formatta olmalı.  
+5. Koleksiyonlar (ArrayList, HashMap vb.) kullanılmamalıdır — yalnızca temel OOP yapıları kullanılmalıdır.
+
+---
+
+## Sınıf Mimarisi
+
+| Sınıf       | Sorumlulukları |
+|-------------|----------------|
+| `Car`       | Araç verilerini tutar (marka, model, günlük ücret), `printInfo()` metodu içerir. |
+| `Rental`    | Kiralama işlemini temsil eder; kaç gün kiralandığını, kiralanan `Car` objesini tutar, toplam ücreti hesaplar. |
+| `CarDriver` | Programın giriş noktasıdır (`main`). Araçları tanımlar, kiralama nesneleri oluşturur, `printInfo()` ile çıktı verir. |
+
+---
+
+## Örnek Çıkış
+
+```
+
 Marka: BMW
 Model: 320i
 Günlük Ücret: 1500.0 TL
 Kiralama Süresi: 5 gün
 Toplam Ücret: 7500.0 TL
----------------------
 
----------------------
 Marka: Mercedes
 Model: C200
 Günlük Ücret: 1800.0 TL
 Kiralama Süresi: 3 gün
 Toplam Ücret: 5400.0 TL
----------------------
 
----------------------
 Marka: Toyota
 Model: Corolla
 Günlük Ücret: 900.0 TL
 Kiralama Süresi: 7 gün
 Toplam Ücret: 6300.0 TL
----------------------
 
+````
+
+---
+
+## Kurulum & Çalıştırma
+
+1. Bu projeyi klonlayın:
+
+   ```bash
+   git clone https://github.com/bykaraga/Car-Rental-Project.git
+````
+
+2. Java derleyicisi (JDK) kurulu olmalı (Java 8 veya üzeri önerilir).
+3. IDE ile projeyi açın (IntelliJ, Eclipse vb.).
+4. `CarDriver` sınıfını çalıştırın.
+5. Konsol çıktısını gözlemleyin.
+
+---
+
+## Lisans
+
+Bu proje **MIT Lisansı** ile lisanslanmıştır. ([GitHub][1])
+
+---
+
+## Uyarı
+
+Bu README’nin yalnızca genel açıklama bölümleri ChatGPT tarafından oluşturulmuştur. Proje kodları, yorumları ve dokümantasyonlarında **yapay zekâ kullanılması yasaktır**.
+
+---
+
+```
+
+
+::contentReference[oaicite:1]{index=1}
+```
+
+[1]: https://github.com/bykaraga/Car-Rental-Project "GitHub - bykaraga/Car-Rental-Project: Araç Kiralama Sistemi (Car Rental Project) Bu projenin amacı, **Java diliyle nesne yönelimli programlama (OOP)** ilkelerini kullanarak   temel bir **araç kiralama sisteminin işleyişini modellemek** ve öğrencinin aşağıdaki konularda uygulamalı deneyim kazanmasını sağlamaktır:"
