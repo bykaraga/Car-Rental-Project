@@ -63,3 +63,124 @@ Car-Rental-Project/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
+
+---
+
+## ⚙️ Kurulum ve Çalıştırma
+
+1️⃣ **Projeyi klonlayın:**
+```bash
+git clone https://github.com/bykaraga/Car-Rental-Project.git
+```
+
+2️⃣ **Klasöre girin:**
+```bash
+cd Car-Rental-Project
+```
+
+3️⃣ **Java dosyalarını derleyin:**
+```bash
+javac src/*.java
+```
+
+4️⃣ **Programı çalıştırın:**
+```bash
+java -cp src CarDriver
+```
+
+---
+
+## 🧩 Sınıf Diyagramı
+
+```text
+        ┌────────────┐
+        │   Car       │
+        ├────────────┤
+        │ brand       │
+        │ model       │
+        │ dailyPrice  │
+        ├────────────┤
+        │ printInfo() │
+        └────────────┘
+               ▲
+               │
+               │ has-a
+               │
+        ┌────────────┐
+        │  Rental     │
+        ├────────────┤
+        │ car         │
+        │ days        │
+        ├────────────┤
+        │ calculate() │
+        │ printInfo() │
+        └────────────┘
+               ▲
+               │
+        ┌────────────┐
+        │ CarDriver  │
+        ├────────────┤
+        │ main()     │
+        └────────────┘
+```
+
+---
+
+## 💡 Örnek Çıktı
+
+```
+Marka: BMW  
+Model: 320i  
+Günlük Ücret: 1500.0 TL  
+Kiralama Süresi: 5 gün  
+Toplam Ücret: 7500.0 TL  
+
+Marka: Mercedes  
+Model: C200  
+Günlük Ücret: 1800.0 TL  
+Kiralama Süresi: 3 gün  
+Toplam Ücret: 5400.0 TL  
+
+Marka: Toyota  
+Model: Corolla  
+Günlük Ücret: 900.0 TL  
+Kiralama Süresi: 7 gün  
+Toplam Ücret: 6300.0 TL
+```
+
+---
+
+## 📘 Kullanılan Teknolojiler
+
+| Teknoloji | Açıklama |
+|------------|-----------|
+| 🟠 **Java SE** | Ana programlama dili |
+| 🧩 **OOP Prensipleri** | Encapsulation, Composition |
+| 🧠 **Git & GitHub** | Versiyon kontrol sistemi |
+| 🖥️ **Terminal** | Çalıştırma ortamı |
+
+---
+
+## 🤝 Katkıda Bulunma
+
+Katkılar her zaman memnuniyetle karşılanır! 💪  
+
+1. Bu repo’yu forkla  
+2. Yeni bir branch oluştur (`feature/yeni-ozellik`)  
+3. Değişikliklerini commit et  
+4. Branch’ini push et  
+5. Pull Request gönder 🎉  
+
+---
+
+## 📄 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.  
+© 2025 [bykaraga](https://github.com/bykaraga)
+
+---
+
+<p align="center">
+  Made with ❤️ by <b>bykaraga</b>
+</p>
